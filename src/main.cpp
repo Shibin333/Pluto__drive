@@ -222,20 +222,20 @@ void loop() {
     if (direction == 'F' || direction == 'B' || direction == 'L' || direction == 'R' || direction == 'S') {
       processCommand(direction);
     }
-    if (direction == 'F' || direction == 'B' || direction == 'L' || direction == 'R') {
+    if (direction == 'F' || direction == 'B' || direction == 'L' || direction == 'R' || direction == 'w') {
       Serial1.println('w');
     }else{
-      Serial1.println('s');
+      Serial1.println(direction);
     }
   }
   
   if (SerialBT.available()) {
     direction = SerialBT.read();
     Serial1.println(direction);
-    if (direction == 'F' || direction == 'B' || direction == 'L' || direction == 'R') {
+    if (direction == 'F' || direction == 'B' || direction == 'L' || direction == 'R' || direction == 'w') {
       Serial1.println('w');
     }else{
-      Serial1.println('s');
+      Serial1.println(direction);
     }
     if (direction == 'F' || direction == 'B' || direction == 'L' || direction == 'R' || direction == 'S') {
       processCommand(direction);
